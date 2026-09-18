@@ -11,21 +11,23 @@ Each phase lists one task per person so contribution stays balanced. Check off t
 
 ---
 
-## Phase 0 — Setup & Planning (Week 1)
+## Phase 0 — Setup & Planning
+*After completing this phase, your project is 10% done.*
 
-- [ ] **P1:** Set up shared GitHub repo, branching strategy, and project board (Kanban/Trello/GitHub Projects)
+- [x] **P1:** Set up shared GitHub repo, branching strategy, and project board (Kanban/Trello/GitHub Projects)
 - [ ] **P2:** Research and shortlist candidate datasets (OpenTelemetry AIOps Benchmark, Microsoft Services Dataset, LO2 Microservice API Anomaly Dataset)
 - [ ] **P3:** Draft the initial system architecture diagram (4 layers) and circulate for team review
 - [ ] **P4:** Set up local dev environment: Docker Compose skeleton with placeholders for Kafka, Supabase/Postgres, FastAPI, React
-- [ ] **All:** Read the Client Brief and Technical Blueprint together; agree on scope boundaries and Definition of Done
+- [x] **All:** Read the Client Brief and Technical Blueprint together; agree on scope boundaries and Definition of Done (P1 completed review)
 
 **Milestone:** Repo live, environments running, datasets chosen, architecture agreed.
 
 ---
 
-## Phase 1 — Data Foundation (Weeks 2–3)
+## Phase 1 — Data Foundation
+*After completing this phase, your project is 20% done.*
 
-- [ ] **P1:** Build telemetry ingestion simulators (synthetic metrics/logs/traces/K8s events) to feed the pipeline before real data is available
+- [x] **P1:** Build telemetry ingestion simulators (synthetic metrics/logs/traces/K8s events) to feed the pipeline before real data is available
 - [ ] **P2:** Preprocess and label anomaly data from chosen datasets; define train/val/test splits
 - [ ] **P3:** Curate a small library of sample remediation playbooks (text runbooks) to later ground the LLM/RAG
 - [ ] **P4:** Design and implement the Supabase/PostgreSQL schema (incidents, alerts, remediation_playbooks, telemetry_metrics) with pgvector enabled
@@ -34,7 +36,8 @@ Each phase lists one task per person so contribution stays balanced. Check off t
 
 ---
 
-## Phase 2 — Ingestion & Processing Layer (Weeks 3–4)
+## Phase 2 — Ingestion & Processing Layer
+*After completing this phase, your project is 30% done.*
 
 - [ ] **P1:** Stand up Kafka topics (metrics.raw, logs.raw, traces.raw, events.k8s) and Flink jobs for windowed aggregation + schema normalization
 - [ ] **P2:** Build early feature extraction (rate-of-change, z-scores) consumed by the anomaly model
@@ -45,7 +48,8 @@ Each phase lists one task per person so contribution stays balanced. Check off t
 
 ---
 
-## Phase 3 — Intelligence Engine: Detection & Clustering (Weeks 5–6)
+## Phase 3 — Intelligence Engine: Detection & Clustering
+*After completing this phase, your project is 40% done.*
 
 - [ ] **P1:** Support P2 with data pipelines for training/serving the anomaly models (batch + streaming inference paths)
 - [ ] **P2:** Implement the Anomaly Engine — start with Isolation Forest baseline, then DAGMM / Transformer Autoencoder for metrics/logs/traces
@@ -56,7 +60,8 @@ Each phase lists one task per person so contribution stays balanced. Check off t
 
 ---
 
-## Phase 4 — Root Cause Graph Engine (Weeks 6–7)
+## Phase 4 — Root Cause Graph Engine
+*After completing this phase, your project is 50% done.*
 
 - [ ] **P1:** Build/maintain the live service-dependency graph data structure (nodes = services/pods/DBs, edges = calls/dependencies)
 - [ ] **P2:** Implement the GNN (PyTorch Geometric) for anomaly-score propagation and causal ranking of root-cause nodes
@@ -67,7 +72,8 @@ Each phase lists one task per person so contribution stays balanced. Check off t
 
 ---
 
-## Phase 5 — LLM Explainer & Predictive Scoring (Weeks 7–8)
+## Phase 5 — LLM Explainer & Predictive Scoring
+*After completing this phase, your project is 60% done.*
 
 - [ ] **P1:** Prepare historical incident + telemetry snapshots as retrievable context (chunking, embedding pipeline)
 - [ ] **P2:** Implement Predictive Failure Scoring (trend/slope-based risk model per service)
@@ -78,7 +84,8 @@ Each phase lists one task per person so contribution stays balanced. Check off t
 
 ---
 
-## Phase 6 — Safety & Remediation Layer (Weeks 8–9)
+## Phase 6 — Safety & Remediation Layer
+*After completing this phase, your project is 70% done.*
 
 - [ ] **P1:** Provide historical action-success data to feed policy trust weights
 - [ ] **P2:** Support root-cause → remediation-type mapping (which failure patterns map to which action types)
@@ -89,7 +96,8 @@ Each phase lists one task per person so contribution stays balanced. Check off t
 
 ---
 
-## Phase 7 — Frontend: Mission Control Dashboard (Weeks 9–11, can run in parallel with Phases 3–6)
+## Phase 7 — Frontend: Mission Control Dashboard
+*After completing this phase, your project is 80% done.* *(Can run in parallel with Phases 3–6)*
 
 - [ ] **P4 (lead):** Build the 7 pages in React + Tailwind — Login, Mission Control Dashboard, Situation Room, Alert Clustering View, Root Cause Graph Explorer, Remediation Playbooks, Settings & Policies
 - [ ] **P1:** Wire up the dashboard's live data feeds (deployment metadata, active situation count)
@@ -100,7 +108,8 @@ Each phase lists one task per person so contribution stays balanced. Check off t
 
 ---
 
-## Phase 8 — Postmortem Learning Loop & Feedback (Week 11)
+## Phase 8 — Postmortem Learning Loop & Feedback
+*After completing this phase, your project is 88% done.*
 
 - [ ] **P1:** Pipe resolved-incident outcomes back into the historical dataset store
 - [ ] **P2:** Use feedback (thumbs up/down on Situations) as a retraining signal for the anomaly/clustering models
@@ -111,7 +120,8 @@ Each phase lists one task per person so contribution stays balanced. Check off t
 
 ---
 
-## Phase 9 — Evaluation Against Target Metrics (Week 12)
+## Phase 9 — Evaluation Against Target Metrics
+*After completing this phase, your project is 95% done.*
 
 - [ ] **P1:** Set up the evaluation harness/test-scenario injector (synthetic alert storms, injected root causes)
 - [ ] **P2:** Measure Anomaly Detection F1-Score (≥0.90) and AUC-ROC (≥0.95); measure Root Cause Top-1 Accuracy (≥85%)
@@ -122,7 +132,8 @@ Each phase lists one task per person so contribution stays balanced. Check off t
 
 ---
 
-## Phase 10 — Documentation, Report & PPO Pitch (Week 13)
+## Phase 10 — Documentation, Report & PPO Pitch
+*After completing this phase, your project is 100% done.*
 
 - [ ] **P1:** Write up the Data/Ingestion sections of the final report (datasets, Kafka/Flink pipeline)
 - [ ] **P2:** Write up the ML/RCA sections (anomaly detection, GNN, evaluation results)
