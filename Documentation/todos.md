@@ -13,11 +13,11 @@ Each phase lists one task per person so contribution stays balanced. Check off t
 
 ## Phase 0 — Setup & Planning (Week 1)
 
-- [ ] **P1:** Set up shared GitHub repo, branching strategy, and project board (Kanban/Trello/GitHub Projects)
+- [x] **P1:** Set up shared GitHub repo, branching strategy, and project board (Kanban/Trello/GitHub Projects)
 - [ ] **P2:** Research and shortlist candidate datasets (OpenTelemetry AIOps Benchmark, Microsoft Services Dataset, LO2 Microservice API Anomaly Dataset)
 - [ ] **P3:** Draft the initial system architecture diagram (4 layers) and circulate for team review
 - [ ] **P4:** Set up local dev environment: Docker Compose skeleton with placeholders for Kafka, Supabase/Postgres, FastAPI, React
-- [ ] **All:** Read the Client Brief and Technical Blueprint together; agree on scope boundaries and Definition of Done
+- [x] **All:** Read the Client Brief and Technical Blueprint together; agree on scope boundaries and Definition of Done (P1 completed review)
 
 **Milestone:** Repo live, environments running, datasets chosen, architecture agreed.
 
